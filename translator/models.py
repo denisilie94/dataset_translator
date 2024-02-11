@@ -47,6 +47,12 @@ class DatasetLanguage(models.Model):
         return f"{self.dataset.name} - {self.language.name}"
 
 
+@receiver(post_delete, sender=DatasetLanguage)
+def auto_delete_file_on_delete(sender, instance, **kwargs):
+    if instance.file:
+        instance.file.delete(save=False)
+
+
 class JsonObject(models.Model):
     dataset_language = models.ForeignKey(DatasetLanguage, on_delete=models.CASCADE, related_name='json_objects')
 
