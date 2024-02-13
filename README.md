@@ -64,4 +64,4 @@ This Django application is designed to help manage and translate different instr
 
 6. Once the translations are completed, you can export the new dataset using the admin custom action "Export Dataset Language to JSON file" from the "Dataset Language" section in the admin panel.
 
-Now you have a Django application with Celery set up to manage and translate instruction datasets. Feel free to customize the application and add additional custom translators in the `task.py` file to suit your needs.
+Feel free to customize the application and add additional custom translators in the `task.py` file to suit your needs.
